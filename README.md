@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://i.ibb.co/xXcKJnn/mobik.jpg" width="597" alt="Is Tracking ready hook">
+  <img src="./trh.png" width="597" alt="Is Tracking ready hook">
 </p>
 
 # Is Tracking ready Hook
