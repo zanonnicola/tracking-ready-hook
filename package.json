@@ -1,0 +1,26 @@
+{
+  "name": "tracking-ready-hook",
+  "version": "0.0.0",
+  "description": "aa",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zanonnicola/tracking-ready-hook.git"
+  },
+  "keywords": [
+    "reactjs",
+    "hooks",
+    "ga",
+    "gtm",
+    "js"
+  ],
+  "author": "Nicola Zanon",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zanonnicola/tracking-ready-hook/issues"
+  },
+  "homepage": "https://github.com/zanonnicola/tracking-ready-hook#readme"
+}
