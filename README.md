@@ -15,7 +15,6 @@ npm install tracking-ready-hook --save
 ```
 
 ## :rocket: Load
-s
 ```js
 // using es modules
 import useTrackingIsLoaded from 'tracking-ready-hook'
@@ -39,7 +38,7 @@ const useTrackingIsLoaded = trackingIsLoaded.default;
 
 ## :bulb: Usage
 
-Let's assume you want to sent some data to GA or to the `dataLayer` but in order to do that you need to wait for GA or GTM to be available in `window`.
+Let's assume you want to send some data to GA or to the `dataLayer` but in order to do that you need to wait for GA or GTM to be available in `window`.
 
 ```javascript
 function App() {
@@ -53,7 +52,7 @@ function App() {
 }
 ```
 
-> Maybe more useful: run inside `useEffect` Hook or `onClick` to send data to `dataLayer`
+Maybe more useful: run inside `useEffect` Hook or `onClick` to send data to `dataLayer`
 
 ```javascript
 
@@ -62,9 +61,9 @@ function App() {
   useEffect(() => {
     if (status) {
       window.dataLayer.push({
-			ecommerce: {
-				currencyCode: 'USD',
-				impressions: [{foo: 'bar'}]
+      ecommerce: {
+			  currencyCode: 'USD',
+			  impressions: [{foo: 'bar'}]
 			}
 		});
     }
