@@ -1,11 +1,20 @@
 {
   "name": "tracking-ready-hook",
   "version": "0.0.0",
-  "description": "aa",
-  "main": "index.js",
+  "description": "Notify when GA and GTM are loaded in your React Component",
+  "source": "src/mobik.js",
+  "main": "lib/mobik.cjs.js",
+  "module": "lib/mobik.esm.js",
+  "browser": "lib/mobik.umd.js",
   "scripts": {
-    "test": "jest"
+    "test": "xo src/*.js && jest",
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "prepublish": "npm run build"
   },
+  "files": [
+    "index.js"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/zanonnicola/tracking-ready-hook.git"
@@ -17,10 +26,63 @@
     "gtm",
     "js"
   ],
-  "author": "Nicola Zanon",
+  "xo": {
+    "rules": {
+      "unicorn/filename-case": 0,
+      "import/no-unassigned-import": 0,
+      "no-unused-expressions": [
+        "error",
+        {
+          "allowTernary": true
+        }
+      ],
+      "camelcase": 0
+    },
+    "prettier": true,
+    "extends": [
+      "xo-react"
+    ],
+    "envs": [
+      "browser",
+      "jest",
+      "es6"
+    ],
+    "ignore": [
+      "node_modules/*",
+      "lib/*"
+    ]
+  },
+  "jest": {
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/*.{js}"
+    ]
+  },
+  "author": {
+    "name": "Nicola Zanon",
+    "url": "nicola-zanon.com"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/zanonnicola/tracking-ready-hook/issues"
   },
-  "homepage": "https://github.com/zanonnicola/tracking-ready-hook#readme"
+  "homepage": "https://github.com/zanonnicola/tracking-ready-hook#readme",
+  "devDependencies": {
+    "@babel/core": "7.3.4",
+    "@babel/preset-env": "7.3.4",
+    "eslint-config-xo-react": "0.19.0",
+    "eslint-plugin-react": "7.12.4",
+    "eslint-plugin-react-hooks": "1.5.1",
+    "jest": "24.5.0",
+    "prettier": "1.16.4",
+    "rollup": "1.6.0",
+    "rollup-plugin-analyzer": "3.0.0",
+    "rollup-plugin-babel": "4.3.2",
+    "rollup-plugin-terser": "4.0.4",
+    "xo": "0.24.0"
+  },
+  "peerDependencies": {
+    "prop-types": "^15.6.2",
+    "react": "16.8.4"
+  }
 }
