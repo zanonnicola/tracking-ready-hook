@@ -6,10 +6,14 @@ import { useIsEvilLoaded } from "./src/index.js";
 function EffectfulComponent() {
   const [status, error] = useIsEvilLoaded();
   return (
-    <div>
-      {status ? "Loaded" : "Not Loaded"}
-      {error ? "Error" : null}
-    </div>
+    <>
+        <div>
+            {status ? "Loaded" : "Not Loaded"}      
+        </div>
+        <div>
+            {error ? "Error" : null}
+        </div>
+    </>
   );
 }
 
@@ -36,12 +40,21 @@ test("it renders the loaded message if GA has been already loaded", () => {
   expect(div.textContent).toBe("Loaded");
 });
 
-test("it renders the loaded message after GA has finished loading", async () => {
-  const { container, getByText, rerender } = render(<EffectfulComponent />);
+test("it renders the loaded message after GA has finished loading", () => {
+  const { container, rerender } = render(<EffectfulComponent />);
   const div = container.firstChild;
   expect(div.textContent).toBe("Not Loaded");
   window.ga = jest.fn();
   rerender(<EffectfulComponent />);
-  jest.runAllTimers();
+  jest.runOnlyPendingTimers();
   expect(div.textContent).toBe("Loaded");
 });
+
+test("it renders the error message if GA hasn't finished loading in time", () => {
+    const { container, rerender } = render(<EffectfulComponent />);
+    const div = container.firstChild;
+    const divError = container.lastChild;
+    expect(div.textContent).toBe("Not Loaded");
+    jest.runOnlyPendingTimers();
+    expect(divError.textContent).toBe("Error");
+  });
