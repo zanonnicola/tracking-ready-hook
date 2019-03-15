@@ -14,7 +14,8 @@
     "release": "release-it"
   },
   "files": [
-    "index.js"
+    "/lib",
+    "/src"
   ],
   "repository": {
     "type": "git",
