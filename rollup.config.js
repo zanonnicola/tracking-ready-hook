@@ -10,7 +10,7 @@ export default [
 		output: {
 			file: 'lib/index.umd.js',
 			format: 'umd',
-			name: 'trackingReadyHook'
+			name: 'trackingIsLoaded'
 		},
 		plugins: [
 			peerDepsExternal(),

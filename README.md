@@ -2,7 +2,7 @@
   <img src="./trh.png" width="597" alt="Is Tracking ready hook">
 </p>
 
-# Is Tracking ready Hook
+# React Hook
 
 Tiny **327 bytes** `React` Hook that notify you when GA or GTM is loaded in your React Component
 
@@ -34,7 +34,7 @@ Or use script tags and globals.
 And then grab it off the global like so:
 
 ```js
-const useTrackingIsLoaded = trackingReadyHook.default;
+const useTrackingIsLoaded = trackingIsLoaded.default;
 ```
 
 ## :bulb: Usage
@@ -43,7 +43,7 @@ Let's assume you want to sent some data to GA or to the `dataLayer` but in order
 
 ```javascript
 function App() {
-  const [status, error] = useIsEvilLoaded();
+  const [status, error] = useTrackingIsLoaded();
   return (
     <div className="App">
       {status ? <p>Loaded</p> : <p>Not Loaded</p>}
@@ -58,7 +58,7 @@ function App() {
 ```javascript
 
 function App() {
-  const [status, error] = useIsEvilLoaded();
+  const [status, error] = useTrackingIsLoaded();
   useEffect(() => {
     if (status) {
       window.dataLayer.push({
@@ -80,7 +80,7 @@ function App() {
 
 ## API
 
-#### `useIsEvilLoaded(timeout: Number);` Default `timeout` 5000
+#### `useTrackingIsLoaded(timeout: Number);` Default `timeout` 5000
 
 Returns an `Array` of `status: Boolean` and `error: Error Object`
 
