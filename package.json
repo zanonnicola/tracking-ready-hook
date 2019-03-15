@@ -2,15 +2,16 @@
   "name": "tracking-ready-hook",
   "version": "0.0.0",
   "description": "Notify when GA and GTM are loaded in your React Component",
-  "source": "src/mobik.js",
-  "main": "lib/mobik.cjs.js",
-  "module": "lib/mobik.esm.js",
-  "browser": "lib/mobik.umd.js",
+  "source": "src/index.js",
+  "main": "lib/index.cjs.js",
+  "module": "lib/index.esm.js",
+  "browser": "lib/index.umd.js",
   "scripts": {
     "test": "xo src/*.js && jest",
     "build": "rollup -c",
     "dev": "rollup -c -w",
-    "prepublish": "npm run build"
+    "prepublish": "npm run build",
+    "release": "release-it"
   },
   "files": [
     "index.js"
@@ -77,6 +78,7 @@
     "react": "16.8.4",
     "react-dom": "16.8.4",
     "react-testing-library": "6.0.0",
+    "release-it": "10.3.1",
     "rollup": "1.6.0",
     "rollup-plugin-analyzer": "3.0.0",
     "rollup-plugin-babel": "4.3.2",
