@@ -1,4 +1,5 @@
 import React from "react";
+import { act } from 'react-dom/test-utils';
 import { render, cleanup } from "react-testing-library";
 
 import { useTrackingIsLoaded } from "./src/index.js";
@@ -46,7 +47,9 @@ test("it renders the loaded message after GA has finished loading", () => {
   expect(div.textContent).toBe("Not Loaded");
   window.ga = jest.fn();
   rerender(<EffectfulComponent />);
-  jest.runOnlyPendingTimers();
+  act(() => {
+    jest.runOnlyPendingTimers();
+  });
   expect(div.textContent).toBe("Loaded");
 });
 
@@ -55,6 +58,8 @@ test("it renders the error message if GA hasn't finished loading in time", () =>
     const div = container.firstChild;
     const divError = container.lastChild;
     expect(div.textContent).toBe("Not Loaded");
-    jest.runOnlyPendingTimers();
+    act(() => {
+      jest.runOnlyPendingTimers();
+    });
     expect(divError.textContent).toBe("Error");
   });
