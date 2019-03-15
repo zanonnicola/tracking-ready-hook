@@ -2,7 +2,7 @@ import React from "react";
 import { act } from 'react-dom/test-utils';
 import { render, cleanup } from "react-testing-library";
 
-import { useTrackingIsLoaded } from "./src/index.js";
+import useTrackingIsLoaded from "./src/index.js";
 
 function EffectfulComponent() {
   const [status, error] = useTrackingIsLoaded();

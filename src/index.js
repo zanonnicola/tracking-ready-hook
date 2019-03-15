@@ -37,4 +37,4 @@ function useTrackingIsLoaded(timeout = 5000) {
 	return [status, error];
 }
 
-export {useTrackingIsLoaded};
+export default useTrackingIsLoaded;
