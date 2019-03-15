@@ -1,10 +1,10 @@
 import React from "react";
 import { render, cleanup } from "react-testing-library";
 
-import { useIsEvilLoaded } from "./src/index.js";
+import { useTrackingIsLoaded } from "./src/index.js";
 
 function EffectfulComponent() {
-  const [status, error] = useIsEvilLoaded();
+  const [status, error] = useTrackingIsLoaded();
   return (
     <>
         <div>

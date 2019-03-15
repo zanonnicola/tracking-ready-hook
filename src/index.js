@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react';
 
-function useIsEvilLoaded(timeout = 5000) {
+function useTrackingIsLoaded(timeout = 5000) {
 	const [status, updateStatus] = useState(false);
 	const [error, updateError] = useState(null);
 
@@ -37,4 +37,4 @@ function useIsEvilLoaded(timeout = 5000) {
 	return [status, error];
 }
 
-export {useIsEvilLoaded};
+export {useTrackingIsLoaded};
