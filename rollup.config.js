@@ -1,4 +1,5 @@
 import babel from 'rollup-plugin-babel';
+import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import {terser} from 'rollup-plugin-terser';
 import {plugin as analyze} from 'rollup-plugin-analyzer';
 
@@ -12,6 +13,7 @@ export default [
 			name: 'trackingReadyHook'
 		},
 		plugins: [
+			peerDepsExternal(),
 			babel({
 				exclude: ['node_modules/**']
 			}),
@@ -20,13 +22,14 @@ export default [
 		]
 	},
 	{
-		entry: 'src/index.js',
+		input: 'src/index.js',
 		external: ['ms'],
 		output: {
 			file: 'lib/index.cjs.js',
 			format: 'cjs'
 		},
 		plugins: [
+			peerDepsExternal(),
 			babel({
 				exclude: ['node_modules/**']
 			}),
@@ -42,6 +45,7 @@ export default [
 			format: 'es'
 		},
 		plugins: [
+			peerDepsExternal(),
 			babel({
 				exclude: ['node_modules/**']
 			}),
