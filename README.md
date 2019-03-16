@@ -4,7 +4,7 @@
 
 # React Hook
 
-Tiny **327 bytes** `React` Hook that notify you when GA or GTM is loaded in your React Component
+Tiny **327 bytes** `React` Hook that notifes you when GA or GTM is loaded in your React Component
 
 Use `requestAnimationFrame` to check when the tracking code has been loaded. There's a pre-defined `timeOut` (default `5000`) that will stop the checking automatically and report an error if you need for example to log it somewhere.
 
